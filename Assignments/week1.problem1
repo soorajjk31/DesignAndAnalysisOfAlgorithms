@@ -1,18 +1,23 @@
-Given an array of nonnegative integers, design a linear algorithm and implement it using a
-program to find whether given key element is present in the array or not. Also, find total number
-of comparisons for each input case. (Time Complexity = O(n), where n is the size of input).
+Given an array of nonnegative integers, design a linear algorithm and implement it using a program to find whether given key element is present in the array or not.
+Also, find total number of comparisons for each input case. (Time Complexity = O(n), where n is the size of input).
 
 #include<stdio.h>
 void search(int* a, int n)
 {
-    int k,i;
-    printf("Enter the key element");
+    int k,i,f=0;
+    printf("Enter the key element\n");
     scanf("%d",&k);
     for(int i=0;i<n;i++)
     {
         if(a[i]==k)
+        {
             printf("KEY found after %d searches",(i+1));
+            f=1;
+            break;
+        }
     }
+    if(f==0)
+        printf("KEY found");
 }
 int main()
 {
@@ -27,3 +32,5 @@ int main()
     }
     search(a,n);
 }
+
+
